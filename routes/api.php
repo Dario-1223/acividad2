@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\ApiCategoriaController;
 use App\Http\Controllers\ApiProductoController;
-
+use App\Http\Controllers\Api\AuthController;
 use Illuminate\Support\Facades\Route;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -39,3 +41,8 @@ Route::apiResource('categorias', ApiCategoriaController::class)->only([
 Route::get('/prueba-api', function () {
     return 'Funciona';
 });
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
+
+Route::post('/registrar', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
